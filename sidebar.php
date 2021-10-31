@@ -1,0 +1,1 @@
+<?php //our themes typically don't have sidebars, but wordpress will give an error if we don't have a sidebar file
