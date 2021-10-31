@@ -1,4 +1,4 @@
-# wp_starter_theme
+# wp_starter
 Wordpress Starter Theme
 
 Starter Theme is a simple, framework agnostic approach to origanizing your markup and css. It includes two starter html files, index-less.html and index-scss.html.
