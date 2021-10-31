@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+$main: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+//we can alwasy go get the full files if we really need them
+//but lately we haven't been so let's save a lot of space and use just what we need
+@import "../fonts/fa-subset";
+
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	&:focus {
+		outline: $primary auto 5px;
+	}
+}
+
+a, a:visited {
+	text-decoration: none;
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+	&:active {
+		text-decoration: none;
+	}
+	/* mobile tap color */
+	&:link {
+		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
+	}
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	text-rendering: optimizelegibility;
+	margin: 0;
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+h1, .h1 {
+}
+h2, .h2 {
+}
+h3, .h3 {
+}
+h4, .h4 {
+}
+h5, .h5 {
+}
+h6, .h6 {
+}
+.btn {
+	display: inline-block;
+	appearance: none;
+	background: transparent;
+	border-radius: 0;
+	text-align: center;
+	cursor: pointer;
+	font-size: 1rem;
+	line-height: normal;
+	&:hover, &:focus, &:active {
+		&[href="#"] {
+		}
+	}
+}
+.subtitle {
+	
+}
+.callout {
+	
+}
+p {
+	margin: 0;
+}
+ul, ol {
+	margin: 0;
+	padding-left: 1.25rem;
+	&.no-styles {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+}
+p, ul, ol {
+	+ p, + ul, + ol {
+		margin-top: 1.5em;
+	}
+}
+nav, .nav, nav ul, .nav ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+hr {
+}
+.read-more {
+}
+.alignleft, .alignright {
+	margin-bottom: 1em;
+}
+@media only screen and (min-width: 481px) {
+	.alignleft, img.alignleft {
+		margin-right: 1.5em;
+		display: inline;
+		float: left;
+	}
+	.alignright, img.alignright {
+		margin-left: 1.5em;
+		display: inline;
+		float: right;
+	}
+	.aligncenter, img.aligncenter {
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+		clear: both;
+	}
+}
+address {
+	font-style: normal;
+}
+.center {
+	text-align: center;
+}
+.upper {
+	text-transform: uppercase;
+}
+.screen-reader-text {
+	position: absolute !important;
+	left: -999em;
+}
+
+.html-times {
+	font-size: 1.5em;
+	vertical-align: sub;
+}
+
+$colors: (
+	'text' $text #fff,
+	'primary' $primary #fff,
+	'white' #FFFFFF,
+);
+
+@each $name, $color, $text-color in $colors {
+	.color-#{$name} {
+		color: $color;
+	}
+	.background-#{$name} {
+		background-color: $color;
+		@if($text-color){
+			color: $text-color;
+			a {
+				color: inherit;
+			}
+		}
+	}
+}

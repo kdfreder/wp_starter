@@ -1,0 +1,20 @@
+// media query mixins
+@mixin phablet {
+	@media (min-width: 480px) { @content; }
+}
+
+@mixin tablet {
+	@media (min-width: 768px) { @content; }
+}
+
+@mixin desktop {
+	@media (min-width: 1024px) { @content; }
+}
+
+@mixin ultra {
+	@media (min-width: 1240px) { @content; }
+}
+
+@function rem($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}rem;
+}

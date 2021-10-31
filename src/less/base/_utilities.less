@@ -1,0 +1,170 @@
+// functions for responsivity
+.phablet(@rules){
+	@media screen and (min-width: @phablet){
+		@rules();
+	}
+}
+
+.tablet(@rules){
+	@media screen and (min-width: @tablet){
+		@rules();
+	}
+}
+
+.desktop(@rules){
+	@media screen and (min-width: @desktop){
+		@rules();
+	}
+}
+
+.ultra(@rules){
+	@media screen and (min-width: @ultra){
+		@rules();
+	}
+}
+
+// manual sized query
+.vp(@w, @rules) {
+	@media only screen and (min-width: @w) {
+		@rules();
+	}
+}
+
+.vp(@w, @rules) {
+	@media only screen and (min-width: @w) {
+		@rules();
+	}
+}
+
+// trying out a single-lin font-size declaration for all viewports
+// don't use for production maybe? only really useful on headings
+// example: .fontSize(1.8, 2.2, 3.2);
+// returns rems
+.fontSize(@_base, @_tablet, @_desktop){
+	font-size: calc(@_base*1rem);
+	@media screen and (min-width: @tablet){
+		font-size: calc(@_tablet*1rem);
+	}
+	@media screen and (min-width: @desktop){
+		font-size: calc(@_desktop*1rem);
+	}
+}
+
+
+// mixins
+.indent{
+	text-indent: -999em;
+}
+
+.button{
+	position: relative;
+	display: block;
+	background: rgb(245,123,0);
+	background: linear-gradient(90deg, rgba(245,123,0,1) 0%, rgba(205,85,0,1) 100%);
+	border-radius: 4px;
+	line-height: 4.9rem;
+	font-size: 2.1rem;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	
+	&:hover{
+		color: #111;
+	}
+	
+	
+	&.lean{
+		background: none;
+		color: @text;
+		text-transform: none;
+		font-size: 1.9rem;
+		margin: auto;
+		
+		&:hover{
+			color: @orange;
+		}
+		
+		span{
+			font-size: 1.6rem;
+			border-bottom: 3px solid @orange;
+			padding-bottom: 8px;
+		}
+	}
+	
+	.tablet({
+		display: inline-block;
+		padding: 0 48px 0 16px;
+	});
+	
+	.desktop({		
+		padding: 10px 48px 10px 16px;
+		
+		&.lean span{
+			font-size: 2.1rem;
+		}
+	});
+}
+
+
+// list drop down
+.list-drop{
+	position: relative;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 2px solid #f1f1f1;
+	height: 5rem;
+	line-height: 4.6rem;
+	
+	&:before{
+		position: absolute;
+		top:0;
+		right:0;
+		bottom: 0;
+		width: 5rem;
+		background: url(/assets/darrow@2x.webp) center no-repeat;
+		background-size: 13px;
+		content:"";
+	}
+	
+	strong{
+		display: block;
+		line-height: 4.6rem;
+		font-weight: 300;
+		padding-left: 20px;
+	}
+	
+	ul{
+		position: absolute;
+		top: 4rem;
+		left: -2px;
+		right: -2px;
+		background: #fff;
+		border-radius: 5px;
+		border: 2px solid #f1f1f1;
+		border-top:0;
+		padding: 15px 0;
+		display: none;
+	}
+	
+	li{
+		line-height: 4rem;
+	}
+	
+	a{
+		color: @text;
+		display: block;
+		padding-left: 20px;
+	}
+	
+	
+	&.active{
+		strong{
+			font-weight: bold;
+		}
+		
+		ul{
+			display: block;
+		}
+	}
+}

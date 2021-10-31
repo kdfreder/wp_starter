@@ -1,0 +1,24 @@
+{
+		"name": "AssetBuilder",
+		"version": "1.0.0",
+		"description": "Compile scss, js, and minifies and migrates images",
+		"main": "gulpfile.js",
+		"author": "kmotion",
+		"devDependencies": {
+				"autoprefixer": "^9.7.0",
+				"cssnano": "^4.1.10",
+				"gulp": "^4.0.2",
+				"gulp-concat": "^2.6.1",
+				"gulp-livereload": "^4.0.2",
+				"gulp-postcss": "^8.0.0",
+				"gulp-replace": "^1.0.0",
+				"gulp-sass": "^4.0.2",
+				"gulp-sourcemaps": "^2.6.5",
+				"gulp-uglify": "^3.0.2"
+		},
+		"dependencies": {
+				"gulp-cache": "^1.1.3",
+				"gulp-imagemin": "^7.1.0",
+				"gulp-less": "^5.0.0"
+		}
+}

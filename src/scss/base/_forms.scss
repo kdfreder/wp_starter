@@ -1,0 +1,88 @@
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+select,
+textarea {
+	
+	&:focus, &:active {
+		
+	}
+	&[disabled] {
+		
+		&:focus, &:active {
+			
+		}
+	}
+}
+select {
+	
+}
+textarea {
+	
+}
+input[type="checkbox"] {
+	
+}
+input[type="radio"] {
+	
+}
+input[type="submit"], input[type="button"], input[type="reset"], button {
+	-webkit-appearance: none;
+	appearance: none;
+	@extend .btn;
+}
+input[type="color"] {
+	
+}
+input[type="file"] {
+	
+}
+input[type="range"] {
+	
+}
+input[type="password"] {
+	letter-spacing: 0.3em;
+}
+::-webkit-input-placeholder {
+	//color: #fff;
+}
+::-moz-placeholder {
+	//color: #fff;
+}
+:-ms-input-placeholder {
+	//color: #fff;
+}
+:-moz-placeholder {
+	//color: #fff;
+}
+
+.gform_fields {
+	padding: 0;
+	list-style-type: none;
+	.gfield {
+		.ginput_container {
+			input {
+				width: 100%;
+			}
+		}
+		&:last-child {
+			//this should always be the captcha
+			label {
+				@extend .screen-reader-text;
+			}
+		}
+	}
+}
+.gform_button {
+	@extend .btn;
+}
