@@ -1,7 +1,7 @@
 <?php
 // Flush rewrite rules for custom post types
-add_action( 'after_switch_theme', 'km_flush_rewrite_rules' );
-function km_flush_rewrite_rules() {
+add_action( 'after_switch_theme', 'cus_flush_rewrite_rules' );
+function cus_flush_rewrite_rules() {
 	flush_rewrite_rules();
 }
 

@@ -146,7 +146,7 @@ Installation
 After cloning the repository, install the dependencies by running the following command in the /tools/ directory:
 
 npm install
-This assumes you have node. Ff you don't, you should, get it here https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+This assumes you have node; get it here https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
 That's it, you're now ready to run Gulp commands. Don't forget, gulp commands should always be run from within the /tools/ directory else they'll fail.
 

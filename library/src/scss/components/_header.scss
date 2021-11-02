@@ -1,0 +1,61 @@
+#mobile-menu-toggle {
+    cursor: pointer;
+    i {
+        font-size: 40px;
+    }
+}
+
+header {
+    .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative
+    }
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+    }
+    &.menu-open {
+        nav {
+            display: block;
+        }
+    }
+}
+
+@include tablet {
+    header {
+        nav {
+            display: flex;
+            position: static;
+            width: auto;
+            ul {
+                >li.menu-item {
+                    position: relative;
+                    .sub-menu {
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        display: none;
+                        background: #fff;
+                        padding: 1em;
+                    }
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        .sub-menu {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include desktop {}
+
+@include ultra {}
