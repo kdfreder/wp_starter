@@ -47,11 +47,11 @@ function cus_filter_ptags_on_images($content){
 //this is how the js and css is added to the site
 function cus_scripts_and_styles(){
   if (!is_admin()){
-		wp_register_style('cus-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all');
+		wp_register_style('cus-stylesheet', get_stylesheet_directory_uri() . '/library/assets/style.css', array(), '', 'all');
 		if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1)){
 			wp_enqueue_script('comment-reply');
 		}
-		wp_register_script('cus-js', get_stylesheet_directory_uri() . '/library/js/min/scripts-min.js', array('jquery'), '', true);
+		wp_register_script('cus-js', get_stylesheet_directory_uri() . '/library/assets/scripts-min.js', array('jquery'), '', true);
 		global $wp_query;
 		wp_localize_script( 'cus-js', 'scripts', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
