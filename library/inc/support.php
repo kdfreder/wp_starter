@@ -51,7 +51,7 @@ function cus_scripts_and_styles(){
 		if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1)){
 			wp_enqueue_script('comment-reply');
 		}
-		wp_register_script('cus-js', get_stylesheet_directory_uri() . '/library/assets/scripts-min.js', array('jquery'), '', true);
+		wp_register_script('cus-js', get_stylesheet_directory_uri() . '/library/assets/script.js', array('jquery'), '', true);
 		global $wp_query;
 		wp_localize_script( 'cus-js', 'scripts', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
